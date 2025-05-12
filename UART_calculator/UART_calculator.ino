@@ -1,7 +1,12 @@
 #include "parser.h"
 #include "calculator.h"
+#include <Arduino.h>
+#include <string.h>
+#include <stdbool.h>
 
-String inputBuffer = "";
+char inputBuffer[64];
+int bufferIndex = 0;
+
 int precision = 2;
 long long scale = 100;
 
@@ -46,24 +51,25 @@ void printFixedPoint(long long value, long long scale, int precision) {
 void loop() {
   while (Serial.available()) {
     char c = Serial.read();
-    if (c == '\n') {
-      inputBuffer.trim();
+
+    if (c == '\n' || c == '\r') {
+      inputBuffer[bufferIndex] = '\0';
+      bufferIndex = 0;
+
       ParsedExpression expr;
-      if (parseExpression(inputBuffer.c_str(), &expr, scale)) {
+      if (parseExpression(inputBuffer, &expr, scale)) {
         if (expr.op == '/' && expr.operand2 == 0) {
           Serial.println("Fehler: Division durch 0 nicht möglich.");
         } else {
           long long result = calculate(&expr, scale);
-
           Serial.print("Ergebnis: ");
           printFixedPoint(result, scale, precision);
         }
       } else {
         Serial.println("Fehlerhafte Eingabe. Bitte Eingabe im Format: Zahl Operator Zahl.");
       }
-      inputBuffer = "";
-    } else {
-      inputBuffer += c;
+    } else if (bufferIndex < sizeof(inputBuffer) - 1) {
+      inputBuffer[bufferIndex++] = c;
     }
   }
 }
