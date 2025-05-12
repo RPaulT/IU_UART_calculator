@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VS_Calculator_Client", "VS_Calculator_Client\VS_Calculator_Client.vcxproj", "{F0F3A087-AC2A-4C71-BBA3-BB65C15AEFED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0F3A087-AC2A-4C71-BBA3-BB65C15AEFED}.Debug|x64.ActiveCfg = Debug|x64
+		{F0F3A087-AC2A-4C71-BBA3-BB65C15AEFED}.Debug|x64.Build.0 = Debug|x64
+		{F0F3A087-AC2A-4C71-BBA3-BB65C15AEFED}.Release|x64.ActiveCfg = Release|x64
+		{F0F3A087-AC2A-4C71-BBA3-BB65C15AEFED}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

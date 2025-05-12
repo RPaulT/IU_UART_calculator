@@ -1,0 +1,147 @@
+Eingabe: 2+2
+Antwort: Bereit für Eingaben (z. B. 1.53+1.005 oder 4,5 * 2):
+
+Eingabe: 2+2
+Antwort: Ergebnis: 4.000
+
+Eingabe: 2+3
+Antwort: Ergebnis: 4.000
+
+Eingabe: 2+4
+Antwort: Ergebnis: 5.000
+
+Eingabe: 2+4
+Antwort: Ergebnis: 6.000
+
+Eingabe: 2+4
+Antwort: Ergebnis: 6.000
+
+Eingabe: 2+4
+Antwort: Ergebnis: 6.000
+
+Eingabe: 24+3
+Antwort: Ergebnis: 6.000
+
+Eingabe: 24+3
+Antwort: Ergebnis: 27.000
+
+Eingabe: 2,2+3
+Antwort: Ergebnis: 27.000
+
+Eingabe: 2,2+3
+Antwort: Ergebnis: 5.20
+
+Eingabe: 2.2 + 34
+Antwort: Ergebnis: 5.20
+
+Eingabe: 2.2 + 34
+Antwort: Ergebnis: 36.20
+
+Eingabe: 1,53 +1.005
+Antwort: Ergebnis: 36.20
+
+Eingabe: 1,53 +1.005
+Antwort: Ergebnis: 2.54
+
+Eingabe: 1,53 +1.004
+Antwort: Ergebnis: 2.54
+
+Eingabe: 1,53 +1.004
+Antwort: Ergebnis: 2.53
+
+Eingabe: 2+2
+Antwort: Ergebnis: 4.000
+
+Eingabe: 2+8
+Antwort: Ergebnis: 10.000
+
+Eingabe: 2*83232
+Antwort: Ergebnis: 166464.000
+
+Eingabe: 9999999999999999999999999*822378327
+Antwort: Ergebnis: --701637131.10
+
+Eingabe: 323232332*3232
+Antwort: Ergebnis: 1009844096.000
+
+Eingabe: 0,323+ 0.1
+Antwort: Ergebnis: 0.42
+
+Eingabe: 0.212 +0.3
+Antwort: Ergebnis: 0.51
+
+Eingabe: 1.53+0.005
+Antwort: Ergebnis: 1.54
+
+Eingabe: 5/2
+Antwort: Ergebnis: 2.50
+
+Eingabe: 2+0
+Antwort: Ergebnis: 2.000
+
+Eingabe: 2+2
+Antwort: Ergebnis: 4
+
+Eingabe: 1,03+0,005
+Antwort: Ergebnis: 1.04
+
+Eingabe: 1,03+ 0.004
+Antwort: Ergebnis: 1.03
+
+Eingabe: 2+2
+Antwort: Ergebnis: 4
+
+Eingabe: SETPREC 0
+Antwort: Neue Präzision: 0
+
+Eingabe: 2,5+1
+Antwort: Ergebnis: 4
+
+Eingabe: SETPREC 4
+Antwort: Neue Praezision: 4
+
+Eingabe: 12.8323+0.000004
+Antwort: Ergebnis: 12.8323
+
+Eingabe: 12.8323+0.000005
+Antwort: Ergebnis: 12.8323
+
+Eingabe: 12.8323+0.00004
+Antwort: Ergebnis: 12.8323
+
+Eingabe: 12.8323+0.00005
+Antwort: Ergebnis: 12.8324
+
+Eingabe: 9/0
+Antwort: Fehler: Division durch 0 nicht möglich.
+
+Eingabe: 5+5
+Antwort: Ergebnis: 10
+
+Eingabe: 5/5
+Antwort: Ergebnis: 1
+
+Eingabe: 5*5
+Antwort: Ergebnis: 25
+
+Eingabe: 5-5
+Antwort: Ergebnis: 0
+
+Eingabe: 5-100
+Antwort: Ergebnis: -95
+
+Eingabe: -82+323
+Antwort: Ergebnis: 405
+
+Eingabe: SETPREC 4
+Antwort: Anzahl der Nachkommastellen: 4
+
+Eingabe: 332
+Antwort: Fehlerhafte Eingabe. Bitte Eingabe im Format: Zahl Operator Zahl.
+
+Eingabe: 323+3233233
+Antwort: Ergebnis: 3233556
+
+Eingabe: 5/0
+Antwort: Fehler: Division durch 0
+
