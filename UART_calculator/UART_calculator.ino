@@ -24,24 +24,33 @@ void printFixedPoint(long long value, long long scale, int precision) {
   long long fractionalPart = value % scale;
 
   Serial.print(integerPart);
-  if (precision == 0) {
+
+  if (precision == 0 || fractionalPart == 0) {
     Serial.println();
     return;
   }
 
   Serial.print(".");
 
-  long long pad = scale / 10;
-  while (pad > 1 && fractionalPart < pad) {
-    Serial.print("0");
-    pad /= 10;
+  // Ziffern vorbereiten
+  char digits[16];  // maximal 15 Nachkommastellen
+  int count = 0;
+
+  long long div = scale / 10;
+  while (div > 0 && count < precision) {
+    int digit = (fractionalPart / div) % 10;
+    digits[count++] = '0' + digit;
+    div /= 10;
   }
 
-  for (int i = precision - 1; i >= 0; i--) {
-    long long divisor = 1;
-    for (int j = 0; j < i; j++) divisor *= 10;
-    int digit = (fractionalPart / divisor) % 10;
-    Serial.print(digit);
+  // Überflüssige Nullen am Ende abschneiden
+  while (count > 0 && digits[count - 1] == '0') {
+    count--;
+  }
+
+  // Ausgabe
+  for (int i = 0; i < count; i++) {
+    Serial.print(digits[i]);
   }
 
   Serial.println();
@@ -55,10 +64,29 @@ void loop() {
       inputBuffer[bufferIndex] = '\0';
       bufferIndex = 0;
 
+      // Befehl zur Änderung der Präzision erkennen
+      if (strncmp(inputBuffer, "SETPREC ", 8) == 0) {
+        int newPrecision = atoi(&inputBuffer[8]);
+        if (newPrecision >= 0 && newPrecision <= 10) {
+          precision = newPrecision;
+
+          // Neue Skalierung berechnen
+          scale = 1;
+          for (int i = 0; i < precision; i++) scale *= 10;
+
+          Serial.print("Anzahl der Nachkommastellen: ");
+          Serial.println(precision);
+        } else {
+          Serial.println("Fehlerhafte Eingabe der Nachkommastellen. Bereich: 0–10. (z.B. 'SETPREC 4')");
+        }
+        return;
+      }
+
+      // Rechenmodus wie bisher
       ParsedExpression expr;
       if (parseExpression(inputBuffer, &expr, scale)) {
         if (expr.op == '/' && expr.operand2 == 0) {
-          Serial.println("Fehler: Division durch 0 nicht möglich.");
+          Serial.println("Fehler: Division durch 0");
         } else {
           long long result = calculate(&expr, scale);
           Serial.print("Ergebnis: ");
@@ -67,7 +95,8 @@ void loop() {
       } else {
         Serial.println("Fehlerhafte Eingabe. Bitte Eingabe im Format: Zahl Operator Zahl.");
       }
-    } else if (bufferIndex < sizeof(inputBuffer) - 1) {
+    }
+    else if (bufferIndex < sizeof(inputBuffer) - 1) {
       inputBuffer[bufferIndex++] = c;
     }
   }
