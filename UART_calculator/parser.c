@@ -75,6 +75,13 @@ bool parseExpression(const char* input, ParsedExpression* result, long long scal
         }
     }
     cleaned[j] = '\0';
+    // Zeichenprüfung: Nur gültige Zeichen erlaubt
+    for (int i = 0; cleaned[i] != '\0'; i++) {
+    char c = cleaned[i];
+    if (!(isdigit((unsigned char)c) || c == '+' || c == '-' || c == '*' || c == '/' || c == '.')) {
+        return false;                                 // Ungültiges Zeichen wie z. B. ;
+    }
+}
 
     // Es darf nur genau ein Operator vorkommen (den Operator vor der ersten Zahl ausgeschlossen)
     if (countOperators(cleaned) != 1) return false;
