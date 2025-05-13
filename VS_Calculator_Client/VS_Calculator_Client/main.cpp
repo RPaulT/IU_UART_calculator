@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
     serial_read_line(startupMsg, sizeof(startupMsg));
 
     std::ofstream log("log.txt", std::ios::app);
-    std::cout << "Rechenausdruck eingeben (z. B. 12.5 * 3; 1,2+2,525), Nachkommastellen [0-10] (z.B. 'SETPREC 2') oder 'exit' zum Beenden:" << std::endl;
+    std::cout << "Rechenausdruck eingeben (z. B. 12.5 * 3; 1,2+2,525), Nachkommastellen [0-10] (mit z.B. 'SETPREC 2') oder 'exit' zum Beenden:" << std::endl;
 
     std::string input;
     while (true) {
