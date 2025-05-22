@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // Liest die Startnachricht des Mikrocontrollers (z. B. "Bereit für Eingaben ...")
+    // Liest die Startnachricht des Mikrocontrollers (z.B. "Bereit für Eingaben ...")
     char startupMsg[128];
     serial_read_line(startupMsg, sizeof(startupMsg));
 
