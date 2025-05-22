@@ -3,7 +3,7 @@
 long long calculate(const ParsedExpression* expr, long long scale) {
 // Führt die mathemische Berechnung entsprechend des Operators aus
 // - `expr` ist ein Zeiger auf den geparsten Ausdruck (mit operand1, operand2, operator)
-// - `scale` ist der Skalierungsfaktor für Festkommazahlen (z. B. 100 für zwei Nachkommastellen)
+// - `scale` ist der Skalierungsfaktor für Festkommazahlen (z.B. 100 für zwei Nachkommastellen)
 
   switch (expr->op) {           // Auswahl basierend auf dem Operator im Ausdruck
 
