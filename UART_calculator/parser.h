@@ -8,9 +8,9 @@ extern "C" {                    // Verhindert C++-Namensmangling und erlaubt Kom
 #endif
 
 typedef struct {                // Definition eines Strukturs namens ParsedExpression
-  long long operand1;           // Erster Operand (z. B. die Zahl links vom Operator)
-  long long operand2;           // Zweiter Operand (z. B. die Zahl rechts vom Operator)
-  char op;                      // Operator (z. B. '+', '-', '*', '/')
+  long long operand1;           // Erster Operand (z.B. die Zahl links vom Operator)
+  long long operand2;           // Zweiter Operand (z.B. die Zahl rechts vom Operator)
+  char op;                      // Operator (z.B. '+', '-', '*', '/')
 } ParsedExpression;
 
 // Deklaration der Funktion `parseExpression`, die einen Rechenausdruck als String verarbeitet,
