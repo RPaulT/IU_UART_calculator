@@ -79,7 +79,7 @@ bool parseExpression(const char* input, ParsedExpression* result, long long scal
     for (int i = 0; cleaned[i] != '\0'; i++) {
     char c = cleaned[i];
     if (!(isdigit((unsigned char)c) || c == '+' || c == '-' || c == '*' || c == '/' || c == '.')) {
-        return false;                                 // Ungültiges Zeichen wie z. B. ;
+        return false;                                 // Ungültiges Zeichen wie z.B. ;
     }
 }
 
