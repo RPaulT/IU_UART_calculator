@@ -1,10 +1,10 @@
-﻿#include "serial.h"
+#include "serial.h"
 #include <windows.h>
 
 // Handle für die serielle Verbindung
 static HANDLE hSerial = NULL;
 
-// Öffnet den seriellen Port mit dem angegebenen Namen (z. B. "COM3")
+// Öffnet den seriellen Port mit dem angegebenen Namen (z.B. "COM3")
 // und konfiguriert ihn auf 9600 Baud, 8 Datenbits, keine Parität, 1 Stoppbit
 bool serial_open(const char* portname) {
     // Öffnet die serielle Schnittstelle (nur Lese-/Schreibzugriff, keine Weitergabe)
